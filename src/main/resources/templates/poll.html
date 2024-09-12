@@ -8,7 +8,7 @@
 <body>
     <h1 th:text="${poll.question}"></h1>
     <ul>
-        <li th:each="option : ${poll.options}">
+        <li th:each="option : ${poll.choices}">
             <span th:text="${option.text}">Option Text</span>
             <span th:text="${option.votes}">Votes</span>
             <form th:action="@{/poll/{pollId}/vote/{optionId}(pollId=${poll.id}, optionId=${option.id})}" method="post">
